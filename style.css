@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,.6)) ,url(./assets/home-8161958_1280\ \(1\).webp); 
+    background-position: center;
+    background-size: cover;
+     position: relative;
+}
+nav{
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   margin: auto;
+  padding-top: 30px;
+}
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+}
+
+nav ul li a::after{
+  /* after adds the content after the li tag */
+  /* consider the content  as an image */
+  content: '';
+  height: 3px;
+  /* width: 100%; */
+  width: 0;
+  /* by setting the width to zero line will be invisible */
+  background: aquamarine;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+
+}
+nav ul li a:hover::after{
+  width: 100%;
+}
+.content{
+  width: 100%;
+  position: absolute;
+   top: 50%;
+     /*Moves the top edge of the element to the midpoint of the container.  */
+ 
+   transform: translateY(-50%); 
+   /*  Adjusts the element's position upwards by 50% of its height, effectively centering it vertically. */
+   /* to place the content in exact center */
+  text-align: center;
+  color: aliceblue;
+}
+.content h1{
+
+ margin-top: 80px; 
+  font-size: 70px;
+}
+.content p{
+  margin: 20px auto;
+  font-weight: 100;
+  line-height:25px;
+ /* line-height: 1.5;  */
+ /* 1.5 times the size of the font */
+  
+}
+button{
+  text-align: center;
+  padding: 15px 0;
+  width: 200px;
+  /* both botton needs same width */
+border-radius: 25px;
+font-weight: bold;
+border: 2px solid rgb(76, 150, 125);
+background: transparent;
+color: white;
+margin: 20px 10px;
+cursor: pointer;
+
+
+position:relative;
+overflow: hidden;
+}
+/* for hovering */
+span{
+  background: rgb(76, 150, 125);
+  /* to apply hover effect we set width to 0
+   width: 100%; */
+  height: 100%;
+  width: 0;
+ 
+  border-radius: 25px;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ /* then the text will be under the span to make it visible we set the 
+ span index to -1 */
+z-index: -1;
+/* so it comes infront */
+transition: 0.5s;
+}
+button:hover span{
+  width: 100%;
+ 
+}
+button:hover{
+  border: none;
+}
+/* we can also apply the hover effect with height also */
